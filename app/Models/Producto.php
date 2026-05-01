@@ -55,7 +55,7 @@ class Producto extends Model
      */
     public function getImagenUrlAttribute(): string
     {
-        if ($this->imagen && file_exists(public_path('storage/' . $this->imagen))) {
+        if ($this->imagen) {
             return asset('storage/' . $this->imagen);
         }
         return asset('images/sushi-placeholder.jpg');
