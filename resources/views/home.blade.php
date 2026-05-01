@@ -220,17 +220,17 @@
 <section class="py-24" style="background: #0F1117;" aria-label="Llamada a la acción">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div class="glass-card p-12 md:p-16 relative overflow-hidden">
-            <div class="absolute inset-0 opacity-5" aria-hidden="true"
+            <div class="absolute inset-0 opacity-5 pointer-events-none" aria-hidden="true"
                  style="background: radial-gradient(circle at 50% 50%, #E8192C, transparent 70%);"></div>
 
-            <div class="text-6xl mb-6">🥢</div>
-            <h2 class="text-4xl md:text-5xl font-black text-white mb-6" style="font-family:'Playfair Display',serif;">
+            <div class="text-6xl mb-6 relative z-10">🥢</div>
+            <h2 class="text-4xl md:text-5xl font-black text-white mb-6 relative z-10" style="font-family:'Playfair Display',serif;">
                 ¿Listo para tu<br><span class="text-gradient-red">próximo pedido?</span>
             </h2>
-            <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto">
+            <p class="text-slate-400 text-lg mb-10 max-w-2xl mx-auto relative z-10">
                 Regístrate gratis, elige tus rolls favoritos y envía tu pedido por WhatsApp. ¡Así de simple!
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center relative z-10">
                 @auth
                     <a href="{{ route('tienda') }}" class="btn-primary px-10 py-4 text-base font-bold">
                         🍱 Ir al Menú para Pedir
