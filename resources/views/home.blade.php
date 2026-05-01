@@ -92,11 +92,10 @@
                     <div class="absolute inset-8 rounded-full flex items-center justify-center"
                          style="background: linear-gradient(135deg, rgba(232,25,44,0.2), rgba(245,200,66,0.1)); border: 2px solid rgba(232,25,44,0.3); backdrop-filter: blur(10px);">
                         <div class="text-center">
-                            <div class="w-24 h-24 rounded-2xl overflow-hidden mx-auto mb-2" style="box-shadow: 0 10px 30px rgba(232,25,44,0.4);">
-                                <img src="{{ asset('images/logo-cat.png') }}" alt="MoniWis Sushi" class="w-full h-full object-cover">
+                            <div class="w-24 h-24 mx-auto mb-2 flex items-center justify-center">
+                                <img src="{{ asset('images/logo-cat.png') }}" alt="MoniWis Sushi" class="w-full h-full object-contain" style="mix-blend-mode: screen; filter: drop-shadow(0 10px 20px rgba(232,25,44,0.4));">
                             </div>
                             <div class="text-sm font-semibold text-white">MoniWis Sushi</div>
-                            <div class="text-xs text-slate-400">Est. 2024</div>
                         </div>
                     </div>
 
