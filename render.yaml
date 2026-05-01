@@ -1,0 +1,65 @@
+services:
+  # ─── Web Service (Laravel PHP) ─────────────────────────────────────────────
+  - type: web
+    name: moniwis-sushi
+    runtime: php
+    plan: free           # Cambia a "starter" ($7/mes) para evitar spin-down
+    buildCommand: bash build.sh
+    startCommand: php artisan serve --host=0.0.0.0 --port=$PORT
+    envVars:
+      - key: APP_NAME
+        value: "MoniWis Sushi"
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_URL
+        fromService:
+          type: web
+          name: moniwis-sushi
+          property: hostport
+      - key: APP_KEY
+        generateValue: true      # Render genera una clave segura automáticamente
+      - key: DB_CONNECTION
+        value: mysql
+      - key: DB_HOST
+        fromDatabase:
+          name: moniwis-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: moniwis-db
+          property: port
+      - key: DB_DATABASE
+        fromDatabase:
+          name: moniwis-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: moniwis-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: moniwis-db
+          property: password
+      - key: WHATSAPP_NUMBER
+        value: "56900000000"     # ← CAMBIA ESTO por tu número real
+      - key: SESSION_DRIVER
+        value: database
+      - key: CACHE_STORE
+        value: database
+      - key: QUEUE_CONNECTION
+        value: database
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: FILESYSTEM_DISK
+        value: local
+
+  # ─── MySQL Database ───────────────────────────────────────────────────────
+  # NOTA: Render MySQL solo está disponible en planes pagados ($7/mes).
+  # Si quieres gratis, usa PlanetScale (ver instrucciones en README).
+  # Descomenta esto solo si usas plan pagado:
+  #
+  # databases:
+  #   - name: moniwis-db
+  #     plan: starter
