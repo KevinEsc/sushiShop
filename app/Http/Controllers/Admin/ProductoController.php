@@ -31,7 +31,7 @@ class ProductoController extends Controller
             'precio'      => 'required|numeric|min:0',
             'categoria'   => 'required|in:' . implode(',', array_keys(Producto::categorias())),
             'stock'       => 'required|integer|min:0',
-            'imagen'      => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'imagen'      => 'nullable|image|mimes:jpg,jpeg,png,webp,heic,heif|max:10240',
             'activo'      => 'boolean',
         ], [
             'nombre.required'   => 'El nombre del producto es obligatorio.',
@@ -39,8 +39,10 @@ class ProductoController extends Controller
             'precio.numeric'    => 'El precio debe ser un número.',
             'precio.min'        => 'El precio no puede ser negativo.',
             'stock.required'    => 'El stock es obligatorio.',
-            'imagen.image'      => 'El archivo debe ser una imagen.',
-            'imagen.max'        => 'La imagen no puede superar 2MB.',
+            'imagen.image'      => 'El archivo debe ser una imagen (jpg, png, webp).',
+            'imagen.mimes'      => 'Formato no permitido. Usa jpg, png o webp.',
+            'imagen.max'        => 'La imagen no puede superar 10MB.',
+            'imagen.uploaded'   => 'Error al subir la imagen. Verifica que el archivo no sea mayor a 10MB.',
         ]);
 
         $data = $request->except('imagen');
@@ -70,7 +72,12 @@ class ProductoController extends Controller
             'precio'      => 'required|numeric|min:0',
             'categoria'   => 'required|in:' . implode(',', array_keys(Producto::categorias())),
             'stock'       => 'required|integer|min:0',
-            'imagen'      => 'nullable|image|mimes:jpg,jpeg,png,webp|max:2048',
+            'imagen'      => 'nullable|image|mimes:jpg,jpeg,png,webp,heic,heif|max:10240',
+        ], [
+            'imagen.image'    => 'El archivo debe ser una imagen.',
+            'imagen.mimes'    => 'Formato no permitido. Usa jpg, png o webp.',
+            'imagen.max'      => 'La imagen no puede superar 10MB.',
+            'imagen.uploaded' => 'Error al subir la imagen. Verifica que el archivo no sea mayor a 10MB.',
         ]);
 
         $data = $request->except(['imagen', '_method', '_token']);

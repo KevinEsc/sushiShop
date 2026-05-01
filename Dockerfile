@@ -70,6 +70,9 @@ RUN mkdir -p storage/framework/{sessions,views,cache} \
     && chown -R www-data:www-data storage bootstrap/cache public \
     && chmod -R 775 storage bootstrap/cache
 
+# Copiar configuración PHP (aumentar límites de subida para móvil)
+COPY docker/php-overrides.ini /usr/local/etc/php/conf.d/uploads.ini
+
 # Script de inicio
 COPY docker-start.sh /usr/local/bin/start.sh
 RUN chmod +x /usr/local/bin/start.sh
