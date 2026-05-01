@@ -38,7 +38,7 @@
                 @php
                     $infos = [
                         ['icon'=>'📍','title'=>'Dirección','value'=>'Calle del Sushi 123, Tu Ciudad'],
-                        ['icon'=>'📱','title'=>'WhatsApp','value'=>'+56 9 0000 0000','link'=>'https://wa.me/56900000000'],
+                        ['icon'=>'📱','title'=>'WhatsApp','value'=>'+56 9 7130 7840','link'=>'https://wa.me/' . config('app.whatsapp_number')],
                         ['icon'=>'📧','title'=>'Email','value'=>'hola@moniwissushi.cl','link'=>'mailto:hola@moniwissushi.cl'],
                         ['icon'=>'🕐','title'=>'Horario','value'=>'Lun–Dom: 12:00 – 23:00 hrs'],
                     ];
