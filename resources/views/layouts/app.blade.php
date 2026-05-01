@@ -48,9 +48,9 @@
 
                 {{-- Logo --}}
                 <a href="{{ route('home') }}" class="flex items-center gap-3 group" aria-label="MoniWis Sushi - Inicio">
-                    <div class="w-10 h-10 rounded-xl overflow-hidden group-hover:scale-110 transition-transform duration-300 flex-shrink-0"
-                         style="box-shadow: 0 4px 20px rgba(232,25,44,0.4);">
-                        <img src="{{ asset('images/logo-cat.png') }}" alt="MoniWis Sushi logo gato cálico" class="w-full h-full object-cover">
+                    <div class="w-12 h-12 group-hover:scale-110 transition-transform duration-300 flex-shrink-0"
+                         style="filter: drop-shadow(0 4px 10px rgba(232,25,44,0.4));">
+                        <img src="{{ asset('images/logo-cat-normal.png') }}" alt="MoniWis Sushi logo gato cálico" class="w-full h-full object-contain">
                     </div>
                     <div class="flex flex-col leading-none">
                         <span class="font-black text-lg tracking-tight" style="font-family:'Playfair Display',serif; color:#F5C842;">MoniWis</span>
@@ -186,8 +186,8 @@
                 {{-- Brand --}}
                 <div>
                     <div class="flex items-center gap-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl overflow-hidden flex-shrink-0" style="box-shadow: 0 4px 16px rgba(232,25,44,0.3);">
-                            <img src="{{ asset('images/logo-cat.png') }}" alt="MoniWis Sushi" class="w-full h-full object-cover">
+                        <div class="w-12 h-12 flex-shrink-0" style="filter: drop-shadow(0 4px 10px rgba(232,25,44,0.3));">
+                            <img src="{{ asset('images/logo-cat-normal.png') }}" alt="MoniWis Sushi" class="w-full h-full object-contain">
                         </div>
                         <div>
                             <span class="font-black text-lg" style="font-family:'Playfair Display',serif; color:#F5C842;">MoniWis</span>
