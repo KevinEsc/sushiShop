@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ProductoController;
 Route::get('/', [PublicController::class, 'home'])->name('home');
 Route::get('/tienda', [PublicController::class, 'tienda'])->name('tienda');
 Route::get('/contacto', [PublicController::class, 'contacto'])->name('contacto');
+Route::post('/contacto', [PublicController::class, 'contactoEnviar'])->name('contacto.enviar');
 
 // ─── AUTENTICACIÓN ────────────────────────────────────────────────────────────
 Route::middleware('guest')->group(function () {

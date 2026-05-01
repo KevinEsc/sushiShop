@@ -46,4 +46,34 @@ class PublicController extends Controller
     {
         return view('contacto');
     }
+
+    /**
+     * Procesar formulario de contacto.
+     */
+    public function contactoEnviar(Request $request)
+    {
+        $request->validate([
+            'nombre'  => 'required|string|max:255',
+            'email'   => 'required|email|max:255',
+            'asunto'  => 'required|string|max:100',
+            'mensaje' => 'required|string|max:2000',
+        ], [
+            'nombre.required'  => 'El nombre es obligatorio.',
+            'email.required'   => 'El correo es obligatorio.',
+            'email.email'      => 'Ingresa un correo válido.',
+            'mensaje.required' => 'El mensaje no puede estar vacío.',
+        ]);
+
+        // Redirigir el mensaje por WhatsApp al admin
+        $numero = config('app.whatsapp_number');
+        $texto  = "📨 *Nuevo mensaje de contacto*\n\n"
+                . "*Nombre:* {$request->nombre}\n"
+                . "*Email:* {$request->email}\n"
+                . "*Asunto:* {$request->asunto}\n\n"
+                . "*Mensaje:*\n{$request->mensaje}";
+
+        $whatsappUrl = 'https://wa.me/' . $numero . '?text=' . urlencode($texto);
+
+        return redirect()->away($whatsappUrl);
+    }
 }

@@ -78,7 +78,7 @@
                 <h2 class="text-2xl font-black text-white mb-6" style="font-family:'Playfair Display',serif;">
                     Envíanos un mensaje
                 </h2>
-                <form method="POST" action="#" class="space-y-5" aria-label="Formulario de contacto">
+                <form method="POST" action="{{ route('contacto.enviar') }}" class="space-y-5" aria-label="Formulario de contacto">
                     @csrf
                     <div>
                         <label for="contact-nombre" class="block text-sm font-medium text-slate-300 mb-2">Nombre completo</label>
