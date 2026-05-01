@@ -49,7 +49,7 @@ class ProductoController extends Controller
         $data['activo'] = $request->boolean('activo', true);
 
         if ($request->hasFile('imagen')) {
-            $data['imagen'] = $request->file('imagen')->store('productos', env('FILESYSTEM_DISK', 'public'));
+            $data['imagen'] = $request->file('imagen')->store('productos', config('filesystems.default'));
         }
 
         Producto::create($data);
@@ -86,9 +86,9 @@ class ProductoController extends Controller
         if ($request->hasFile('imagen')) {
             // Eliminar imagen anterior
             if ($producto->imagen) {
-                Storage::disk(env('FILESYSTEM_DISK', 'public'))->delete($producto->imagen);
+                Storage::disk(config('filesystems.default'))->delete($producto->imagen);
             }
-            $data['imagen'] = $request->file('imagen')->store('productos', env('FILESYSTEM_DISK', 'public'));
+            $data['imagen'] = $request->file('imagen')->store('productos', config('filesystems.default'));
         }
 
         $producto->update($data);
@@ -102,7 +102,7 @@ class ProductoController extends Controller
         $nombre = $producto->nombre;
 
         if ($producto->imagen) {
-            Storage::disk(env('FILESYSTEM_DISK', 'public'))->delete($producto->imagen);
+            Storage::disk(config('filesystems.default'))->delete($producto->imagen);
         }
 
         $producto->delete();

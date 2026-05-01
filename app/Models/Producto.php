@@ -56,7 +56,7 @@ class Producto extends Model
     public function getImagenUrlAttribute(): string
     {
         if ($this->imagen) {
-            if (env('FILESYSTEM_DISK', 'public') === 's3') {
+            if (config('filesystems.default') === 's3') {
                 return \Illuminate\Support\Facades\Storage::disk('s3')->url($this->imagen);
             }
             return asset('storage/' . $this->imagen);
