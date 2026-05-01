@@ -34,13 +34,19 @@
                 $categoriasMas = \App\Models\Producto::groupBy('categoria')->orderByRaw('COUNT(*) DESC')->pluck('categoria')->first();
             @endphp
             @foreach([
-                ['label' => 'Total Productos', 'value' => $total, 'icon' => '🍣', 'color' => '#E8192C'],
+                ['label' => 'Total Productos', 'value' => $total, 'icon' => 'cat', 'color' => '#E8192C'],
                 ['label' => 'Activos', 'value' => $activos, 'icon' => '✅', 'color' => '#25D366'],
                 ['label' => 'Stock Bajo', 'value' => $stockBajo, 'icon' => '⚠️', 'color' => '#F5C842'],
                 ['label' => 'Categorías', 'value' => count(\App\Models\Producto::categorias()), 'icon' => '📂', 'color' => '#60a5fa'],
             ] as $stat)
                 <div class="glass-card p-5">
-                    <div class="text-2xl mb-2">{{ $stat['icon'] }}</div>
+                    @if($stat['icon'] === 'cat')
+                        <div class="w-8 h-8 rounded-lg overflow-hidden mb-2">
+                            <img src="{{ asset('images/logo-cat.png') }}" alt="productos" class="w-full h-full object-cover">
+                        </div>
+                    @else
+                        <div class="text-2xl mb-2">{{ $stat['icon'] }}</div>
+                    @endif
                     <div class="text-2xl font-black" style="color:{{ $stat['color'] }};">{{ $stat['value'] }}</div>
                     <div class="text-xs text-slate-400 mt-1">{{ $stat['label'] }}</div>
                 </div>
