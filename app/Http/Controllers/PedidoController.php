@@ -73,7 +73,7 @@ class PedidoController extends Controller
 
         $mensaje .= "\n⏰ Pedido realizado el " . now()->format('d/m/Y H:i') . " hrs";
 
-        $whatsappNumber = config('app.whatsapp_number', env('WHATSAPP_NUMBER', '56900000000'));
+        $whatsappNumber = config('app.whatsapp_number', '56971307840');
         $url = 'https://wa.me/' . $whatsappNumber . '?text=' . urlencode($mensaje);
 
         return redirect()->away($url);

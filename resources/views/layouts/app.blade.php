@@ -221,7 +221,7 @@
                         </li>
                         <li class="flex items-center gap-3 text-sm text-slate-400">
                             <span>📱</span>
-                            <a href="https://wa.me/{{ env('WHATSAPP_NUMBER','56900000000') }}" target="_blank" rel="noopener" class="hover:text-white transition-colors">
+                            <a href="https://wa.me/{{ config('app.whatsapp_number') }}" target="_blank" rel="noopener" class="hover:text-white transition-colors">
                                 WhatsApp
                             </a>
                         </li>
