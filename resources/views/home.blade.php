@@ -184,7 +184,7 @@
                     <div class="p-6">
                         <span class="text-xs font-medium px-3 py-1 rounded-full capitalize"
                               style="background: rgba(232,25,44,0.15); color:#E8192C; border: 1px solid rgba(232,25,44,0.2);">
-                            {{ Producto::categorias()[$producto->categoria] ?? $producto->categoria }}
+                            {{ \App\Models\Producto::categorias()[$producto->categoria] ?? $producto->categoria }}
                         </span>
                         <h3 class="text-lg font-bold text-white mt-3 mb-2" style="font-family:'Playfair Display',serif;">
                             {{ $producto->nombre }}
@@ -253,4 +253,3 @@
 </style>
 @endpush
 
-@php use App\Models\Producto; @endphp
