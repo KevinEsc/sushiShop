@@ -41,8 +41,8 @@
             ] as $stat)
                 <div class="glass-card p-5">
                     @if($stat['icon'] === 'cat')
-                        <div class="w-10 h-10 mb-1" style="filter: drop-shadow(0 2px 5px rgba(232,25,44,0.3));">
-                            <img src="{{ asset('images/logo-cat-normal.png') }}" alt="productos" class="w-full h-full object-contain">
+                        <div class="w-10 h-10 mb-1 rounded-full overflow-hidden" style="box-shadow: 0 2px 5px rgba(232,25,44,0.3);">
+                            <img src="{{ asset('images/logo-cat-normal.jpg') }}" alt="productos" class="w-full h-full object-cover">
                         </div>
                     @else
                         <div class="text-2xl mb-2">{{ $stat['icon'] }}</div>

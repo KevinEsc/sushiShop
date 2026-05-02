@@ -11,8 +11,8 @@
         {{-- Logo --}}
         <div class="text-center mb-8">
             <a href="{{ route('home') }}" class="inline-flex flex-col items-center gap-2">
-                <div class="w-20 h-20" style="filter: drop-shadow(0 8px 20px rgba(232,25,44,0.4));">
-                    <img src="{{ asset('images/logo-cat-normal.png') }}" alt="MoniWis Sushi" class="w-full h-full object-contain">
+                <div class="w-20 h-20 rounded-full overflow-hidden" style="box-shadow: 0 8px 20px rgba(232,25,44,0.4);">
+                    <img src="{{ asset('images/logo-cat-normal.jpg') }}" alt="MoniWis Sushi" class="w-full h-full object-cover">
                 </div>
                 <span class="text-2xl font-black" style="font-family:'Playfair Display',serif; color:#F5C842;">MoniWis Sushi</span>
             </a>

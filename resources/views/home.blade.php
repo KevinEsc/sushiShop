@@ -92,8 +92,8 @@
                     <div class="absolute inset-8 rounded-full flex items-center justify-center"
                          style="background: linear-gradient(135deg, rgba(232,25,44,0.2), rgba(245,200,66,0.1)); border: 2px solid rgba(232,25,44,0.3); backdrop-filter: blur(10px);">
                         <div class="text-center">
-                            <div class="w-32 h-32 mx-auto mb-3 flex items-center justify-center" style="filter: drop-shadow(0 10px 20px rgba(232,25,44,0.4));">
-                                <img src="{{ asset('images/logo-cat-sushi.png') }}" alt="MoniWis Sushi" class="w-full h-full object-contain">
+                            <div class="w-32 h-32 mx-auto mb-3 rounded-full overflow-hidden flex items-center justify-center" style="box-shadow: 0 10px 20px rgba(232,25,44,0.4);">
+                                <img src="{{ asset('images/logo-cat-sushi.jpg') }}" alt="MoniWis Sushi" class="w-full h-full object-cover">
                             </div>
                             <div class="text-sm font-semibold text-white">MoniWis Sushi</div>
                         </div>
